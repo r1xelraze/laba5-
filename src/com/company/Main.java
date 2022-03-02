@@ -1,16 +1,25 @@
 package com.company;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int[] nums = {44, 52, 1, 2, 5, 10, 22, 26, 31};
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите количество элементов в массиве: ");
+        int size = scan.nextInt();
+        int[] nums = new int [size];
         int[] nums2 = new int [nums.length];
-
-        for (int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i] + " ");
+        System.out.println("Заполните массив: ");
+        for (int i = 0; i < size; i++) {
+            nums[i]= scan.nextInt();
+        }
+        System.out.print ("Полученный массив: ");
+        for (int i = 0; i < size; i++) {
+            System.out.print(nums[i]+" ");
         }
         System.out.println();
-        System.out.println("Вывод преобразованного массива: ");
+
+        System.out.print("Вывод преобразованного массива: ");
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] % 2 == 0) {
                 nums2[i]=nums[i];
